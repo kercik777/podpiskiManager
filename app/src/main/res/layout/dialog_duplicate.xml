@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/dup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="@string/duplicates_title" />
+
+    <!-- Прогресс -->
+    <LinearLayout
+        android:id="@+id/dup_progress_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone">
+        
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminateTint="@color/accent_blue" />
+        
+        <TextView
+            android:id="@+id/dup_progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:text="@string/duplicates_checking" />
+    </LinearLayout>
+
+    <!-- Пусто -->
+    <LinearLayout
+        android:id="@+id/dup_none_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone">
+        
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_check"
+            android:contentDescription="@null" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/duplicates_none"
+            android:textColor="@color/success"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/duplicates_none_desc"
+            android:textColor="@color/text_hint"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Список дубликатов -->
+    <ScrollView
+        android:id="@+id/dup_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone">
+        
+        <LinearLayout
+            android:id="@+id/dup_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- 🔥 Кнопки: Отмена + Удалить -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="end">
+        <!-- Кнопка ОТМЕНА (её не хватало!) -->
+        <TextView
+            android:id="@+id/btn_cancel_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:paddingHorizontal="20dp"
+            android:gravity="center"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Кнопка УДАЛИТЬ -->
+        <TextView
+            android:id="@+id/btn_delete_duplicates"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginStart="12dp"
+            android:gravity="center"
+            android:text="@string/btn_delete_duplicates"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_danger"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

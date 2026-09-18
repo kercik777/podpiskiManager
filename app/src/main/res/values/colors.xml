@@ -1,0 +1,27 @@
+<resources>
+    <color name="colorAccent">#1C6DFF</color>
+    <color name="colorPrimary">#1C6DFF</color>
+    <color name="colorPrimaryDark">#1C6DFF</color>
+    <color name="colorControlHighlight">#DAE2FF</color>
+    <color name="colorControlNormal">#1C6DFF</color>
+    <color name="bg_primary">#0A0A1A</color>
+    <color name="bg_surface">#141428</color>
+    <color name="bg_card">#1A1A2E</color>
+    <color name="bg_input">#0F0F23</color>
+    <color name="accent_blue">#667EEA</color>
+    <color name="accent_purple">#764BA2</color>
+    <color name="text_primary">#EEEEFF</color>
+    <color name="text_secondary">#8888AA</color>
+    <color name="text_hint">#555577</color>
+    <color name="success">#00E676</color>
+    <color name="warning">#FFB74D</color>
+    <color name="error">#FF5252</color>
+    <color name="info">#40C4FF</color>
+    <color name="border_subtle">#2A2A4A</color>
+    <color name="settings_icon_bg">#252545</color>
+    <color name="fab_ripple">#33FFFFFF</color>
+    <color name="folder_accent">#FFB74D</color>
+    <color name="scrollbar_thumb">#33FFFFFF</color>
+    <color name="snackbar_bg">#1E1E3E</color>
+    <color name="undo_color">#667EEA</color>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Podpiski" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorPrimaryDark">@color/bg_primary</item>
+        <item name="colorAccent">@color/accent_purple</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="alertDialogTheme">@style/Theme.Podpiski.Dialog</item>
+    </style>
+    <style name="Theme.Podpiski.Dialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorAccent">@color/accent_purple</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Менеджер Подписок</string>
+    <string name="search_hint">Поиск…</string>
+    <string name="no_subscriptions">Пока пусто</string>
+    <string name="no_subscriptions_desc">Нажмите + чтобы добавить папку или подписку</string>
+    <string name="no_search_results">Ничего не найдено</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_add_folder">Новая папка</string>
+    <string name="dialog_add_subscription">Новая подписка</string>
+    <string name="dialog_edit_folder">Редактировать папку</string>
+    <string name="dialog_edit_subscription">Редактировать подписку</string>
+    <string name="hint_folder_name">Название папки</string>
+    <string name="hint_name">Имя подписки</string>
+    <string name="hint_link">Ссылка на подписку</string>
+    <string name="btn_add">Добавить</string>
+    <string name="btn_save">Сохранить</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="btn_delete">Удалить</string>
+    <string name="btn_confirm">Продолжить</string>
+
+    <!-- Validation -->
+    <string name="error_empty_folder_name">Введите название папки</string>
+    <string name="error_folder_exists">Папка с таким именем уже существует</string>
+    <string name="error_empty_name">Введите имя подписки</string>
+    <string name="error_empty_link">Введите ссылку на подписку</string>
+    <string name="error_name_exists">Подписка с таким именем уже существует</string>
+    <string name="error_link_exists">Подписка с такой ссылкой уже существует под именем %1$s</string>
+    <string name="error_unknown">Неизвестная ошибка. Попробуйте позже.</string>
+
+    <!-- Глобальные дубликаты -->
+<string name="error_name_exists_global">Подписка с именем %1$s уже существует в папке %2$s</string>
+<string name="error_link_exists_global">Такая ссылка уже используется для подписки "%1$s" в папке "%2$s"</string>
+
+    <!-- Actions -->
+    <string name="link_copied">Ссылка скопирована</string>
+
+    <!-- Delete folder and sub confirmations -->
+    <string name="delete_folder_title">Удалить папку?</string>
+    <string name="delete_folder_confirm">Удалить папку %1$s?</string>
+    <string name="delete_folder_with_subs_confirm">Папка %1$s содержит %2$d подписок. Удалить папку и все подписки в ней?</string>
+    <string name="delete_sub_title">Удалить подписку?</string>
+    <string name="delete_sub_confirm">Удалить подписку %1$s?</string>
+    <string name="folder_deleted">Папка %1$s удалена</string>
+    <string name="sub_deleted">Подписка %1$s удалена</string>
+
+    <!-- FAB -->
+    <string name="fab_add_folder">Добавить папку</string>
+    <string name="fab_add_subscription">Добавить подписку</string>
+
+    <!-- Folder -->
+    <string name="folder_count">%d подписок</string>
+    <string name="folder_empty">Пустая папка</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_export">Экспорт данных</string>
+    <string name="settings_export_desc">Сохранить все данные в файл</string>
+    <string name="settings_import">Импорт данных</string>
+    <string name="settings_import_desc">Загрузить данные из файла (заменит текущие)</string>
+    <string name="settings_duplicates">Проверка дубликатов</string>
+    <string name="settings_duplicates_desc">Найти и удалить повторяющиеся подписки</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_about_desc">Версия %1$s</string>
+
+    <!-- Export/Import -->
+    <string name="export_success">Данные экспортированы</string>
+    <string name="export_error">Ошибка при экспорте</string>
+    <string name="import_success">Импортировано: %1$d папок, %2$d подписок</string>
+    <string name="import_error">Ошибка при импорте</string>
+    <string name="import_confirm_title">Импорт данных</string>
+    <string name="import_confirm_message">Все текущие данные будут удалены и заменены на импортируемые. Продолжить?</string>
+    <string name="no_data">Нет данных для экспорта</string>
+    <string name="export_progress">Экспорт данных…</string>
+    <string name="import_progress">Импорт данных…</string>
+
+    <!-- Duplicates -->
+    <string name="duplicates_title">Проверка дубликатов</string>
+    <string name="duplicates_checking">Проверка…</string>
+    <string name="duplicates_none">Дубликатов не найдено!</string>
+    <string name="duplicates_none_desc">Все подписки уникальны</string>
+    <string name="duplicates_deleting">Удаление дубликатов…</string>
+    <string name="duplicates_deleted">Удалено дубликатов: %d</string>
+    <string name="btn_delete_duplicates">Удалить дубликаты</string>
+
+    <!-- Sort -->
+    <string name="sort_title">Сортировка</string>
+    <string name="sort_default">По порядку</string>
+    <string name="sort_newest_first">По возрастанию</string>
+    <string name="sort_oldest_first">По убыванию</string>
+
+    <!-- General -->
+    <string name="app_version">1.0.0</string>
+    <string name="count_items">%d элементов</string>
+    <string name="drag_hint">Зажмите и перетащите</string>
+    
+    <!-- Dialog buttons -->
+    <string name="btn_cancel_delete">Отмена</string>
+    
+<string name="sort_asc">По возрастанию</string>
+<string name="sort_desc">По убыванию</string>
+</resources>

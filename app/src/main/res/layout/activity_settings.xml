@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:orientation="vertical" 
+    android:background="@color/bg_primary">
+    
+    <LinearLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="?attr/actionBarSize" 
+        android:orientation="horizontal" 
+        android:gravity="center_vertical" 
+        android:paddingStart="8dp" 
+        android:paddingEnd="16dp">
+        
+        <ImageView 
+            android:id="@+id/btn_back" 
+            android:layout_width="44dp" 
+            android:layout_height="44dp" 
+            android:padding="10dp" 
+            android:src="@drawable/ic_back" 
+            android:background="?attr/selectableItemBackgroundBorderless" />
+            
+        <TextView 
+            android:layout_width="0dp" 
+            android:layout_height="wrap_content" 
+            android:layout_weight="1" 
+            android:text="@string/settings_title" 
+            android:textColor="@color/text_primary" 
+            android:textSize="20sp" 
+            android:textStyle="bold" 
+            android:paddingStart="8dp" />
+    </LinearLayout>
+    
+    <ScrollView 
+        android:layout_width="match_parent" 
+        android:layout_height="0dp" 
+        android:layout_weight="1" 
+        android:clipToPadding="false" 
+        android:padding="16dp">
+        
+        <LinearLayout 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:orientation="vertical">
+            
+            <TextView 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:text="ДАННЫЕ" 
+                android:textColor="@color/text_hint" 
+                android:textSize="11sp" 
+                android:textStyle="bold" 
+                android:letterSpacing="0.1" 
+                android:paddingStart="4dp" 
+                android:paddingBottom="10dp" />
+            
+            <!-- Экспорт -->
+            <LinearLayout 
+                android:id="@+id/settings_export" 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal" 
+                android:gravity="center_vertical" 
+                android:background="@drawable/bg_settings_item" 
+                android:padding="16dp" 
+                android:layout_marginBottom="8dp" 
+                android:clickable="true" 
+                android:focusable="true">
+                
+                <LinearLayout 
+                    android:layout_width="40dp" 
+                    android:layout_height="40dp" 
+                    android:gravity="center" 
+                    android:background="@drawable/bg_icon_circle" 
+                    android:layout_marginEnd="16dp">
+                    <ImageView 
+                        android:layout_width="20dp" 
+                        android:layout_height="20dp" 
+                        android:src="@drawable/ic_export" 
+                        android:alpha="0.9"/>
+                </LinearLayout>
+                
+                <LinearLayout 
+                    android:layout_width="0dp" 
+                    android:layout_height="wrap_content" 
+                    android:layout_weight="1" 
+                    android:orientation="vertical">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_export" 
+                        android:textColor="@color/text_primary" 
+                        android:textSize="15sp"/>
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_export_desc" 
+                        android:textColor="@color/text_hint" 
+                        android:textSize="12sp" 
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            
+            <!-- Импорт -->
+            <LinearLayout 
+                android:id="@+id/settings_import" 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal" 
+                android:gravity="center_vertical" 
+                android:background="@drawable/bg_settings_item" 
+                android:padding="16dp" 
+                android:layout_marginBottom="8dp" 
+                android:clickable="true" 
+                android:focusable="true">
+                
+                <LinearLayout 
+                    android:layout_width="40dp" 
+                    android:layout_height="40dp" 
+                    android:gravity="center" 
+                    android:background="@drawable/bg_icon_circle" 
+                    android:layout_marginEnd="16dp">
+                    <ImageView 
+                        android:layout_width="20dp" 
+                        android:layout_height="20dp" 
+                        android:src="@drawable/ic_import" 
+                        android:alpha="0.9"/>
+                </LinearLayout>
+                
+                <LinearLayout 
+                    android:layout_width="0dp" 
+                    android:layout_height="wrap_content" 
+                    android:layout_weight="1" 
+                    android:orientation="vertical">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_import" 
+                        android:textColor="@color/text_primary" 
+                        android:textSize="15sp"/>
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_import_desc" 
+                        android:textColor="@color/text_hint" 
+                        android:textSize="12sp" 
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            
+            <TextView 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:text="ИНСТРУМЕНТЫ" 
+                android:textColor="@color/text_hint" 
+                android:textSize="11sp" 
+                android:textStyle="bold" 
+                android:letterSpacing="0.1" 
+                android:paddingStart="4dp" 
+                android:paddingTop="20dp" 
+                android:paddingBottom="10dp" />
+            
+            <!-- Дубликаты -->
+            <LinearLayout 
+                android:id="@+id/settings_duplicates" 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal" 
+                android:gravity="center_vertical" 
+                android:background="@drawable/bg_settings_item" 
+                android:padding="16dp" 
+                android:layout_marginBottom="8dp" 
+                android:clickable="true" 
+                android:focusable="true">
+                
+                <LinearLayout 
+                    android:layout_width="40dp" 
+                    android:layout_height="40dp" 
+                    android:gravity="center" 
+                    android:background="@drawable/bg_icon_circle" 
+                    android:layout_marginEnd="16dp">
+                    <ImageView 
+                        android:layout_width="20dp" 
+                        android:layout_height="20dp" 
+                        android:src="@drawable/ic_duplicate" 
+                        android:alpha="0.9"/>
+                </LinearLayout>
+                
+                <LinearLayout 
+                    android:layout_width="0dp" 
+                    android:layout_height="wrap_content" 
+                    android:layout_weight="1" 
+                    android:orientation="vertical">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_duplicates" 
+                        android:textColor="@color/text_primary" 
+                        android:textSize="15sp"/>
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_duplicates_desc" 
+                        android:textColor="@color/text_hint" 
+                        android:textSize="12sp" 
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            
+            <TextView 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:text="О ПРИЛОЖЕНИИ" 
+                android:textColor="@color/text_hint" 
+                android:textSize="11sp" 
+                android:textStyle="bold" 
+                android:letterSpacing="0.1" 
+                android:paddingStart="4dp" 
+                android:paddingTop="20dp" 
+                android:paddingBottom="10dp" />
+            
+            <!-- О приложении -->
+            <LinearLayout 
+                android:id="@+id/settings_about" 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal" 
+                android:gravity="center_vertical" 
+                android:background="@drawable/bg_settings_item" 
+                android:padding="16dp" 
+                android:layout_marginBottom="8dp" 
+                android:clickable="true" 
+                android:focusable="true">
+                
+                <LinearLayout 
+                    android:layout_width="40dp" 
+                    android:layout_height="40dp" 
+                    android:gravity="center" 
+                    android:background="@drawable/bg_icon_circle" 
+                    android:layout_marginEnd="16dp">
+                    <ImageView 
+                        android:layout_width="20dp" 
+                        android:layout_height="20dp" 
+                        android:src="@drawable/ic_info" 
+                        android:alpha="0.9"/>
+                </LinearLayout>
+                
+                <LinearLayout 
+                    android:layout_width="0dp" 
+                    android:layout_height="wrap_content" 
+                    android:layout_weight="1" 
+                    android:orientation="vertical">
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="@string/settings_about" 
+                        android:textColor="@color/text_primary" 
+                        android:textSize="15sp"/>
+                    <TextView 
+                        android:id="@+id/tv_version" 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:textColor="@color/text_hint" 
+                        android:textSize="12sp" 
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_primary" android:fitsSystemWindows="true">
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/transparent" app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:background="@color/bg_primary" app:titleTextColor="@color/text_primary" app:title="@string/app_name" app:menu="@menu/menu_main" app:navigationIconTint="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView android:id="@+id/tv_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20dp" android:layout_marginBottom="8dp" android:textColor="@color/text_secondary" android:textSize="12sp" android:visibility="gone" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_view" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingBottom="90dp" android:scrollbarStyle="outsideOverlay" android:scrollbars="vertical" android:fadeScrollbars="false" android:scrollbarThumbVertical="@drawable/bg_scrollbar_thumb" />
+        <LinearLayout android:id="@+id/empty_state" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:visibility="gone">
+            <ImageView android:layout_width="72dp" android:layout_height="72dp" android:alpha="0.25" android:src="@drawable/ic_folder" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/no_subscriptions" android:textColor="@color/text_secondary" android:textSize="17sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/no_subscriptions_desc" android:textColor="@color/text_hint" android:textSize="13sp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/search_empty_state" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:visibility="gone">
+            <ImageView android:layout_width="56dp" android:layout_height="56dp" android:alpha="0.25" android:src="@drawable/ic_search" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/no_search_results" android:textColor="@color/text_secondary" android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/fab_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom|end" android:layout_margin="20dp" android:src="@drawable/ic_add" app:backgroundTint="@color/accent_blue" app:tint="@color/text_primary" app:elevation="8dp" app:pressedTranslationZ="12dp" app:rippleColor="@color/fab_ripple" app:borderWidth="0dp" app:fabSize="normal" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
