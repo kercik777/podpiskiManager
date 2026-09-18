@@ -118,10 +118,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void updateFolderPositions(List<Folder> folders) {
         SQLiteDatabase db = getWritableDatabase();
-        for (int i = 0; i < folders.size(); i++) {
-            ContentValues cv = new ContentValues();
-            cv.put(F_POSITION, i);
-            db.update(T_FOLDERS, cv, F_ID + "=?", new String[]{String.valueOf(folders.get(i).getId())});
+        db.beginTransaction();
+        try {
+            for (int i = 0; i < folders.size(); i++) {
+                ContentValues cv = new ContentValues();
+                cv.put(F_POSITION, i);
+                db.update(T_FOLDERS, cv, F_ID + "=?", new String[]{String.valueOf(folders.get(i).getId())});
+                folders.get(i).setPosition(i);
+            }
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
         }
     }
 
@@ -298,10 +305,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void updateSubPositions(List<Subscription> subs) {
         SQLiteDatabase db = getWritableDatabase();
-        for (int i = 0; i < subs.size(); i++) {
-            ContentValues cv = new ContentValues();
-            cv.put(S_POSITION, i);
-            db.update(T_SUBS, cv, S_ID + "=?", new String[]{String.valueOf(subs.get(i).getId())});
+        db.beginTransaction();
+        try {
+            for (int i = 0; i < subs.size(); i++) {
+                ContentValues cv = new ContentValues();
+                cv.put(S_POSITION, i);
+                db.update(T_SUBS, cv, S_ID + "=?", new String[]{String.valueOf(subs.get(i).getId())});
+                subs.get(i).setPosition(i);
+            }
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
         }
     }
 

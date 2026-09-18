@@ -27,6 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -85,8 +86,14 @@ public class MainActivity extends AppCompatActivity {
             @Override public void onSubDelete(Subscription s) { deleteSubscription(s); }
             @Override public void onSubClick(Subscription s) { copyLink(s.getLink()); }
             @Override public void onSubLongClick(Subscription s) { showMoveToFolderDialog(s); }
-            @Override public void onOrderChanged() { 
-                if (!isInsideFolder) {
+            @Override public void onOrderChanged() {
+                // Drag & drop меняет порядок только в адаптере. Сразу сохраняем
+                // новый порядок в SQLite, иначе refresh()/onResume() снова
+                // загрузит старые позиции из базы.
+                if (isSearchActive()) return;
+                if (isInsideFolder) {
+                    saveSubscriptionOrder();
+                } else {
                     saveFolderOrder();
                 }
             }
@@ -278,6 +285,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private boolean isSearchActive() {
+        return searchView != null && searchView.getQuery() != null
+                && !searchView.getQuery().toString().trim().isEmpty();
+    }
+
     private void saveFolderOrder() {
         List<Object> items = adapter.getItems();
         List<Folder> folders = new ArrayList<>();
@@ -287,6 +299,29 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         dbHelper.updateFolderPositions(folders);
+    }
+
+    private void saveSubscriptionOrder() {
+        List<Object> items = adapter.getItems();
+        List<Subscription> subscriptions = new ArrayList<>();
+        for (Object o : items) {
+            if (o instanceof Subscription) {
+                Subscription subscription = (Subscription) o;
+                if (subscription.getFolderId() == currentFolderId) {
+                    subscriptions.add(subscription);
+                }
+            }
+        }
+
+        if (subscriptions.isEmpty()) return;
+
+        // В режиме убывания видимый список является обратным порядком позиций
+        // в базе. Поэтому сохраняем перевёрнутый список, чтобы после refresh()
+        // пользователь увидел тот же порядок, в котором оставил элементы.
+        if ("desc".equals(currentSortMode)) {
+            Collections.reverse(subscriptions);
+        }
+        dbHelper.updateSubPositions(subscriptions);
     }
 
     private void deleteFolder(Folder folder) {
